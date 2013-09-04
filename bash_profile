@@ -1,5 +1,8 @@
-# Machine specific settings, including PATH
+# Machine specific settings, including non-standard PATH.
 source .bash_local
+
+# ~/local/bin should always be first, though. 
+PATH=~/local/bin:$PATH
 
 command_exists () {
     type "$1" &> /dev/null

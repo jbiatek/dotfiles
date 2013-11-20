@@ -1,0 +1,3 @@
+[submodule "vim/bundle/wmnusmv.vim"]
+	path = vim/bundle/wmnusmv.vim
+	url = https://github.com/wannesm/wmnusmv.vim.git

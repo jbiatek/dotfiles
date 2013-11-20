@@ -1,2 +1,4 @@
 [user]
 	email = jbiatek@gmail.com
+[push]
+	default = simple

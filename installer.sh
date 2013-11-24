@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="zshrc bash_profile vimrc gvimrc vim gitconfig inputrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="zshrc vimrc gvimrc vim gitconfig inputrc oh-my-zsh"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -31,9 +31,6 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
-
-echo "Creating a .bash_local file for you."
-touch ~/.bash_local
 
 echo "Now you need to run:"
 echo "    git submodule init"

@@ -35,4 +35,5 @@ done
 echo "Now you need to run:"
 echo "    git submodule init"
 echo "    git submodule update"
+echo "    chsh -s /bin/zsh"
 echo "That should do it!"

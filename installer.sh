@@ -23,8 +23,8 @@ cd $dir
 echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-echo "Blindly moving any existing dotfiles from ~ to $olddir, without actually"
-echo "checking to see if they're there."
+echo "Blindly moving any existing dotfiles from ~ to $olddir,"
+echo "without actually checking to see if they're there."
 
 for file in $files; do
     mv ~/.$file ~/dotfiles_old/

@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="zshrc bash_profile vimrc gvimrc vim gitconfig inputrc"    # list of files/folders to symlink in homedir
+files="zshrc vimrc gvimrc vim gitconfig inputrc oh-my-zsh"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -23,12 +23,17 @@ cd $dir
 echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+echo "Blindly moving any existing dotfiles from ~ to $olddir, without actually"
+echo "checking to see if they're there."
+
 for file in $files; do
-    echo "Blindly moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
 
-echo "Creating a .bash_local file for you."
-touch ~/.bash_local
+echo "Now you need to run:"
+echo "    git submodule init"
+echo "    git submodule update"
+echo "    chsh -s /bin/zsh"
+echo "That should do it!"

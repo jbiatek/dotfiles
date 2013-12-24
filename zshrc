@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Removed because it's not building yet:
 #export PLEXIL_HOME=/Volumes/HDD/jbiatek/Repositories/plexil
 # To add it to the PATH, add $PLEXIL_HOME/bin
-export PATH=$HOME/local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:/usr/local/bin:/usr/local/opt/ruby/bin:$PATH
 
 # Uncomment this once MacVim works again
 if (( $+commands[mvim] )); then

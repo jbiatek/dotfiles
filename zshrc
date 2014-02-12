@@ -78,6 +78,9 @@ plugins=(git mercurial svn brew osx)
 
 source $ZSH/oh-my-zsh.sh
 
+# zsh has a built in function that conflicts with MultiMarkdown, delete it.
+compdef -d mmd
+
 # Customize to your needs...
 # Removed because it's not building yet:
 #export PLEXIL_HOME=/Volumes/HDD/jbiatek/Repositories/plexil

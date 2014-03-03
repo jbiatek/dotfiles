@@ -28,7 +28,7 @@ if (( $+commands[nusmv] )); then
 	alias smv="nusmv -pre cpp -df -dynamic"
 fi
 
-alias jpf="java -Xmx2048m -cp bin -Djava.library.path=../jpf-symbc/lib -jar ~/workspace/jpf-core/build/RunJPF.jar"
+alias jpf="~/workspace/jpf-core/bin/jpf"
 
 # Only do this one if AppleScript exists
 # if (( $+commands[osascript] )); then
@@ -82,12 +82,9 @@ source $ZSH/oh-my-zsh.sh
 compdef -d mmd
 
 # Customize to your needs...
-# Removed because it's not building yet:
-#export PLEXIL_HOME=/Volumes/HDD/jbiatek/Repositories/plexil
-# To add it to the PATH, add $PLEXIL_HOME/bin
-export PATH=$HOME/local/bin:/usr/local/bin:/usr/local/opt/ruby/bin:$PATH
+export PLEXIL_HOME=/Users/jbiatek/Repositories/plexil
+export PATH=$HOME/local/bin:/usr/local/bin:/usr/local/opt/ruby/bin:$PATH:$PLEXIL_HOME/bin
 
-# Uncomment this once MacVim works again
 if (( $+commands[mvim] )); then
 	export EDITOR=mvim
 else
@@ -98,3 +95,4 @@ uptime
 if (( $+commands[ddate] )); then
 	ddate
 fi
+

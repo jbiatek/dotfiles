@@ -1,3 +1,5 @@
+# .zshrc is sourced for INTERACTIVE shells. 
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -55,21 +57,32 @@ ZSH_THEME="mortalscumbag"
 plugins=(git mercurial svn brew osx)
 
 
+# Convenience aliases
+# alias ll="ls -lA"
+alias la="ls -A"
+alias ..="cd .."
+alias md="mkdir -pv"
+alias wget="wget -c"
+alias cdff="cdf"
+alias manp="man-preview"
+alias beep="tput bel"
+alias notify="beep || beep"
+
+alias restow="stow -R"
+alias unstow="stow -D"
+
+
 source $ZSH/oh-my-zsh.sh
 
 # zsh has a built in function that conflicts with MultiMarkdown, delete it.
 compdef -d mmd
 
-# Customize to your needs...
-export PLEXIL_HOME=/Users/jbiatek/Repositories/plexil
-export PATH=$HOME/local/bin:/usr/local/bin:/usr/local/opt/ruby/bin:$PATH:$PLEXIL_HOME/bin
 
-if (( $+commands[mvim] )); then
-	export EDITOR=mvim
-else
-	export EDITOR=vim
-fi
+# Machine specific settings go here.
+source ~/.zshrc_local
 
+
+# Things I like to see at startup:
 uptime
 if (( $+commands[ddate] )); then
 	ddate

@@ -25,12 +25,17 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 echo "Blindly moving any existing dotfiles from ~ to $olddir,"
 echo "without actually checking to see if they're there."
+echo "If a file isn't found, just ignore it."
 
 for file in $files; do
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+echo "Creating local-only shell files..."
+echo "# .zshenv is sourced for ALL shells that don't have -f set." > ~/.zshenv_local
+echo "# .zshrc is sourced for INTERACTIVE shells." > ~/.zshrc_local
 
 echo "Now you need to run:"
 echo "    git submodule init"

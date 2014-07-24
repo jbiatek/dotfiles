@@ -1,23 +1,16 @@
+# .zshenv is sourced for ALL shells, unless -f is set.
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll="ls -lA"
-alias la="ls -A"
-alias ..="cd .."
-alias md="mkdir -pv"
-alias wget="wget -c"
-alias cdff="cdf"
-alias manp="man-preview"
-alias beep="tput bel"
-alias notify="beep || beep"
 
-alias restow="stow -R"
-alias unstow="stow -D"
+# Environment variables
+export EDITOR=vim
+# Always add custom stuff to the path first: My home directory, then
+# Homebrew/other systemwide custom stuff.
+typeset -U path
+path=($HOME/local/bin /usr/local/bin $path)
 
-# NuSMV with sensible settings
-if (( $+commands[nusmv] )); then
-	alias smv="nusmv -pre cpp -df -dynamic"
-fi
+export PATH
 
-alias jpf="~/workspace/jpf-core/bin/jpf"
-alias tplex="java -jar /Users/jbiatek/Repositories/TPlex/TPlex.jar"
+# Machine specific settings go here:
+source ~/.zshenv_local

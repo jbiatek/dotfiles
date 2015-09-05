@@ -5,6 +5,12 @@
 
 # Environment variables
 export EDITOR=vim
+
+# Add locally installed Gem binaries to path
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 # Always add custom stuff to the path first: My home directory, then
 # Homebrew/other systemwide custom stuff.
 typeset -U path

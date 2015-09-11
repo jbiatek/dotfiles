@@ -33,9 +33,16 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+
 echo "Creating local-only shell files..."
-echo "# .zshenv is sourced for ALL shells that don't have -f set." > ~/.zshenv_local
-echo "# .zshrc is sourced for INTERACTIVE shells." > ~/.zshrc_local
+if [ ! -f ~/.zshenv_local ] 
+then 
+	echo "# .zshenv is sourced for ALL shells that don't have -f set." > ~/.zshenv_local
+fi 
+if [ ! -f ~/.zshrc_local ] 
+then 
+	echo "# .zshrc is sourced for INTERACTIVE shells." > ~/.zshrc_local
+fi
 
 echo "Now you need to run:"
 echo "    git submodule init"

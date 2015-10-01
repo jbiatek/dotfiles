@@ -1,9 +1,9 @@
 [submodule "vim/bundle/wmnusmv.vim"]
-	path = vim/bundle/wmnusmv.vim
+	path = .vim/bundle/wmnusmv.vim
 	url = https://github.com/wannesm/wmnusmv.vim.git
 [submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
+	path = .vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
+	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git

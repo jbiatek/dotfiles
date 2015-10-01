@@ -1,0 +1,8 @@
+.*\.swp
+\.DS_Store
+\.git
+\.gitignore
+\.gitmodules
+\.stow-local-ignore
+installer\.sh
+README\.md

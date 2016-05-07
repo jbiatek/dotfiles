@@ -14,7 +14,7 @@ fi
 # Always add custom stuff to the path first: My home directory, then
 # Homebrew/other systemwide custom stuff.
 typeset -U path
-path=($HOME/local/bin /usr/local/bin $path)
+path=($HOME/local/bin /usr/local/sbin /usr/local/bin $path)
 
 export PATH
 

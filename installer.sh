@@ -13,6 +13,18 @@ if [ ! -f ~/.zshrc_local ]
 then 
 	echo "# .zshrc is sourced for INTERACTIVE shells." > ~/.zshrc_local
 fi
+if [ ! -f ~/.macos_login ]
+then 
+	cat > ~/.macos_login <<EOF
+# Run by ~/Library/LaunchAgents/local.login-script.plist at login.
+
+# You are running under sh, not zsh or bash, so script accordingly.
+# To set an environment variable for all subsequent user processes, including
+# GUI applications, do this:
+#    launchctl setenv VAR_NAME "some value"
+
+EOF
+fi
 
 echo "To change your shell, run:"
 echo "    chsh -s /bin/zsh"

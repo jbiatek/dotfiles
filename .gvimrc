@@ -1,6 +1,7 @@
 set guifont=Menlo\ Regular:h12
 set background=light
 highlight ColorColumn guibg=LightGray
+highlight Normal guifg=black guibg=white
 
 " Add a number gutter wide enough that it probably won't get bigger.
 set number

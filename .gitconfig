@@ -5,6 +5,15 @@
 	default = simple
 [core]
 	excludesfile = /Users/jbiatek/.gitignore_global
+[alias]
+	unstage = reset HEAD --
+	untrack = rm --cached --
+	ff = merge --ff-only
+	co = checkout
+	lg = log --all -n 20 --decorate --oneline --graph
+	pointer = branch -f
+	ls = branch -a
+	fa = fetch --all
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

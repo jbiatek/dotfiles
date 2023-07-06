@@ -1,10 +1,12 @@
 [user]
 	email = jbiatek@gmail.com
 	name = Jason Biatek
+	signingkey = /Users/jbiatek/.ssh/id_ed25519
 [push]
 	default = simple
 [core]
 	excludesfile = /Users/jbiatek/.gitignore_global
+	autocrlf = input
 [alias]
 	unstage = reset HEAD --
 	untrack = rm --cached --
@@ -20,7 +22,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[commit]
-	template = /Users/jbiatek/.stCommitMsg
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh

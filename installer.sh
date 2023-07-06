@@ -7,11 +7,12 @@ git submodule update
 echo "Creating local-only shell files if not already present..."
 if [ ! -f ~/.zshenv_local ] 
 then 
-	echo "# .zshenv is sourced for ALL shells that don't have -f set." > ~/.zshenv_local
+	echo "# .zshenv is sourced first, and for ALL shells that don't have -f set." > ~/.zshenv_local
+	echo "# Note that macOS is going to add its stuff to the front of PATH after this, so if you want your stuff first it should probably go in .zshrc_local instead." >> ~/.zshenv_local
 fi 
 if [ ! -f ~/.zshrc_local ] 
 then 
-	echo "# .zshrc is sourced for INTERACTIVE shells." > ~/.zshrc_local
+	echo "# .zshrc is sourced for INTERACTIVE shells after .zshenv and .zprofile." > ~/.zshrc_local
 fi
 if [ ! -f ~/.macos_login ]
 then 

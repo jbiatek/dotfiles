@@ -81,10 +81,10 @@ compdef -d mmd
 # Machine specific settings go here.
 source ~/.zshrc_local
 
-
 # Things I like to see at startup:
 uptime
 if (( $+commands[ddate] )); then
 	ddate
 fi
+
 

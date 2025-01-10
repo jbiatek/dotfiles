@@ -12,17 +12,23 @@
 	untrack = rm --cached --
 	ff = merge --ff-only
 	co = checkout
-	lg = log --all -n 20 --decorate --oneline --graph
+	lg = log --all --decorate --oneline --graph
+	lg-current = log --decorate --oneline --graph
 	pointer = branch -f
 	ls = branch -a
 	fa = fetch --all
+	local-ignore-hide = update-index --assume-unchanged
+	local-ignore-show = update-index --no-assume-unchanged
+	local-ignore-list = !git ls-files -v | grep "^[[:lower:]]"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [init]
 	defaultBranch = main
 [gpg]
 	format = ssh
+[pull]
+	ff = only
